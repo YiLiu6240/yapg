@@ -1,0 +1,38 @@
+name: yapg
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.7
+  - environs
+  - typer
+  - loguru
+  - requests
+  - pandas
+  - numpy
+  - scipy
+  - seaborn
+  - matplotlib
+  - spacy
+  - pytorch=1.6
+  - tensorboard
+  - pytorch-lightning=0.10
+  - scikit-learn
+  - jupyterlab
+  # also https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  - ipywidgets
+  - nodejs
+  - black
+  - mypy
+  - jedi
+  - isort
+  - autoflake
+  - flake8
+  # pip
+  - pip
+  - pip:
+    - pysbd
+    - transformers==3.3
+    - datasets
+    - nb_black
