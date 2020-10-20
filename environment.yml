@@ -36,3 +36,4 @@ dependencies:
     - transformers==3.3
     - datasets
     - nb_black
+    - syllables

@@ -1,5 +1,41 @@
 PYTHON_FILES=$$(git ls-files -- . | grep "\.py$$")
 
+# -------- tang poetry --------
+
+## tang poetry: process vocab
+tang-poetry-vocab:
+	python -m scripts.process_tang_poetry_vocab
+
+## tang poetry: train model
+tang-poetry-train:
+	python -m scripts.tang_poetry_train \
+		--fp16
+
+## tang poetry: generate poetry (remember to have a checkpoint model in place)!
+tang-poetry-gen:
+	python -m scripts.tang_poetry_gen \
+		--starting-text "数据挖掘哪家强" \
+		--max-doc-length 21
+
+# -------- english haiku poetry --------
+
+## english haiku: process source data
+haiku-process-corpus:
+	python -m scripts.process_haiku_corpus
+
+## english haiku: train model
+haiku-train:
+	python -m scripts.haiku_train \
+		--batch_size 48 \
+		--num_train_epochs 20 \
+		--fp16
+
+## english haiku: generate poetry (remember to have a checkpoint model in place)!
+haiku-gen:
+	python -m scripts.haiku_gen \
+		--starting-text "how to do data mining"
+
+
 # -------- utils --------
 
 ## Lint codebase
